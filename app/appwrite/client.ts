@@ -17,4 +17,6 @@ const account = new Account(client);
 const database = new Databases(client);
 const storage = new Storage(client);
 
+console.log("account", appwriteConfig.tripCollectionId, "database", appwriteConfig.userCollectionId);
+
 export { client, account, database, storage };

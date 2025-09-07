@@ -4,6 +4,7 @@ import { redirect } from "react-router";
 
 export const getExistingUser = async (id: string) => {
   try {
+    console.log("getExistingUser", appwriteConfig.databaseId);
     const { documents, total } = await database.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
