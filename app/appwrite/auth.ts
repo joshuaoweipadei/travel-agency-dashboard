@@ -4,7 +4,6 @@ import { redirect } from "react-router";
 
 export const getExistingUser = async (id: string) => {
   try {
-    console.log("getExistingUser", appwriteConfig.databaseId);
     const { documents, total } = await database.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
@@ -109,7 +108,7 @@ export const getAllUsers = async (limit: number, offset: number) => {
   try {
     const { documents: users, total } = await database.listDocuments(
       appwriteConfig.databaseId,
-      appwriteConfig.userCollectionId,
+      "users",
       [Query.limit(limit), Query.offset(offset)]
     )
 

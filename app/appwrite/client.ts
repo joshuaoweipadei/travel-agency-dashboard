@@ -13,10 +13,8 @@ const client = new Client()
   .setEndpoint(appwriteConfig.endpointUrl)
   .setProject(appwriteConfig.projectId)
 
-const account = new Account(client);
+const account = new Account(client); // currently logged in user
 const database = new Databases(client);
 const storage = new Storage(client);
-
-console.log("account", appwriteConfig.tripCollectionId, "database", appwriteConfig.userCollectionId);
 
 export { client, account, database, storage };
