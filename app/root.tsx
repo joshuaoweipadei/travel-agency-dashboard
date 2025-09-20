@@ -24,21 +24,24 @@ export const links: Route.LinksFunction = () => [
 ];
 
 import { registerLicense } from "@syncfusion/ej2-base";
+import React from "react";
 
 registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY)
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {children}
-        <ScrollRestoration />
+    <head>
+      <meta charSet="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="icon" type="image/png" href="/logo.svg"/>
+      <Meta/>
+      <Links/>
+      <title>Tour Achievers</title>
+    </head>
+    <body>
+    {children}
+    <ScrollRestoration />
         <Scripts />
       </body>
     </html>
