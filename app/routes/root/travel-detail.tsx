@@ -20,14 +20,15 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
       id: $id,
       ...parseTripData(tripDetail),
       imageUrls: imageUrls ?? []
-    }))
+    })),
+    fakePaymentLink: `/travel/${tripId}/success`
   }
 }
 
 const TravelDetail = ({ loaderData }: Route.ComponentProps) => {
   const imageUrls = loaderData?.trip?.imageUrls || [];
   const tripData = parseTripData(loaderData?.trip?.tripDetail);
-  const paymentLink = loaderData?.trip?.payment_link;
+  const paymentLink = loaderData?.trip?.payment_link || loaderData?.fakePaymentLink;
 
   const {
     name, duration, itinerary, travelStyle,
