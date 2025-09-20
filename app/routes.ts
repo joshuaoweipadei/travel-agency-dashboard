@@ -11,6 +11,8 @@ export default [
     route('trips/:tripId', 'routes/admin/trip-detail.tsx'),
   ]),
   layout("routes/root/page-layout.tsx", [
-    index("routes/root/travel-landing.tsx")
+    index("routes/root/travel-landing.tsx"),
+    route('/travel/:tripId', 'routes/root/travel-detail.tsx'),
+    route('/travel/:tripId/success', 'routes/root/payment-success.tsx'),
   ])
 ] satisfies RouteConfig;

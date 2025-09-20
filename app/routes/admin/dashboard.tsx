@@ -12,7 +12,8 @@ import {
   ColumnSeries,
   DataLabel, SeriesCollectionDirective, SeriesDirective,
   SplineAreaSeries,
-  Tooltip
+  Tooltip,
+  Legend
 } from "@syncfusion/ej2-react-charts";
 
 export const clientLoader = async () => {
@@ -50,7 +51,7 @@ export const clientLoader = async () => {
     allTrips,
     userGrowth,
     tripsByTravelStyle,
-    allUsers: mappedUsers
+    allUsers: mappedUsers,
   }
 }
 
@@ -136,8 +137,9 @@ const Dashboard = ({ loaderData }: Route.ComponentProps) => {
           primaryYAxis={useryAxis}
           title="User Growth"
           tooltip={{enable: true}}
+          legendSettings={{ visible: true }}
         >
-          <Inject services={[ColumnSeries, SplineAreaSeries, Category, DataLabel, Tooltip]}/>
+          <Inject services={[ColumnSeries, SplineAreaSeries, Category, DataLabel, Tooltip, Legend]}/>
 
           <SeriesCollectionDirective>
             <SeriesDirective
@@ -168,8 +170,9 @@ const Dashboard = ({ loaderData }: Route.ComponentProps) => {
           primaryYAxis={tripyAxis}
           title="Trip Trends"
           tooltip={{enable: true}}
+          legendSettings={{ visible: true }}
         >
-          <Inject services={[ColumnSeries, SplineAreaSeries, Category, DataLabel, Tooltip]}/>
+          <Inject services={[ColumnSeries, SplineAreaSeries, Category, DataLabel, Tooltip, Legend]}/>
 
           <SeriesCollectionDirective>
             <SeriesDirective
